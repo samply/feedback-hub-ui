@@ -54,6 +54,10 @@ export default {
     postData() {
       this.enableSuccessAlert = false;
       this.enableDangerAlert = false;
+      let myPath = import.meta.env.VITE_BACKEND_URI + this.postPath;
+      console.log("myPath: " + myPath);
+      console.log("requestID: " + this.requestID);
+      console.log("publication: " + this.publication);
       console.log("sending data");
       axios.post(import.meta.env.VITE_BACKEND_URI + this.postPath, { "requestID" : this.requestID, "publicationReference" : this.publication } )
       .then(response => {
@@ -63,7 +67,7 @@ export default {
           this.enableSuccessAlert = true;
           this.enableDangerAlert = false;
         } else {
-          console.log("nok")
+          console.log("Something went wrong while posting data, status: " + response.status);
           this.enableSuccessAlert = false;
           this.enableDangerAlert = true;
         }
