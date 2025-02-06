@@ -11,6 +11,9 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
   },
+  build: {
+    sourcemap: true, // Enable source maps for debugging
+  },
   server: {
     proxy: {
       '/api': 'http://localhost:8071'
