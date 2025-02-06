@@ -8,13 +8,16 @@ Implemented with with Vue 3 in Vite.
 TODO: VITE_BACKEND_URI is set in .env at build time. This needs to be settable at execution time, so that it can be passed as an environment variable to Docker.
 
 ## Building for production
+If you want to run the feedback hub UI centrally together with the [feedback hub backend](https://github.com/samply/feedback-hub),
+you will need to clone the repository and build the container:
 ``` code
+git clone https://github.com/samply/feedback-hub-ui.git
+cd feedback-hub-ui
 docker build -t samply/feedback-hub-ui .
 ```
 
 ## Running the UI
-The UI is designed to be run centrally together with the [feedback hub backend](https://github.com/samply/feedback-hub),
-but it can also be run locally if you want to test it.
+If you just want to test the feeback hub UI locally on your computer, follow these steps.
 
 ### Docker
 Build as shown above, and then:
